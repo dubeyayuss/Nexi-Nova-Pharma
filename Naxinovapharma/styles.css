@@ -1,428 +1,267 @@
-/* --- Basic Reset --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+/* ===================================================== */
+/* ================= MOBILE NAVBAR ===================== */
+/* ===================================================== */
+
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
+/* MOBILE NAV */
+@media (max-width:768px){
 
-body {
-    background: #FFFBFB;
-    color: #222;
-    overflow-x: hidden;
-}
-
-@media (max-width: 600px) {
-    h1 { font-size: 26px; }
-    h2 { font-size: 22px; }
-    h3 { font-size: 18px; }
-    p  { font-size: 14px; }
-}
-
-/* ---------------- TOP BAR ---------------- */
-.top-bar {
-    background: #2E3A45;
-    padding: 6px 20px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-   
-}
-
-.top-left, .top-right {
-    color: #FFFFFF
-}
-
-/* ---------------- NAVBAR ---------------- */
-.navbar {
-    height: 70px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background: #FBF9F1;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    transition: 0.3s ease-in-out;
-}
-
-.logo-img{
-    width: 200px;
-    height: 55px;
-}
-
-.navbar.scrolled {
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 45px;
-    font-size: 18px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #000;
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
+    .navbar{
+        padding:15px 20px;
     }
 
-    nav {
-        padding: 10px 0;
+    .logo-img{
+        width:160px;
+        height:auto;
     }
+
+    .menu-toggle{
+        display:block;
+        color:#000;
+    }
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#FBF9F1;
+        flex-direction:column;
+        align-items:center;
+        gap:25px;
+        padding:30px 0;
+        display:none;
+        box-shadow:0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links a{
+        font-size:18px;
+    }
+
 }
 
-/* ---------------- HERO ---------------- */
-.hero {
-    background: url('assets/hero-bg.jpg') center/cover no-repeat;
-    height: 650px;
-    position: relative;
-    border-radius: 30px;
+/* ===================================================== */
+/* ================= HERO RESPONSIVE =================== */
+/* ===================================================== */
+
+@media (max-width:768px){
+
+.hero{
+    height:auto;
+    border-radius:0;
 }
 
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0, 120, 255, 0.35), #5CC689);
-    border-radius: 30px;
+.hero-overlay{
+    border-radius:0;
 }
+
+.hero-content{
+    padding:80px 25px;
+    max-width:100%;
+}
+
 #main{
-    font-size: 80px;
+    font-size:42px;
 }
 
 #helping{
-    color: #0A2A43;
-    font-size: 65px ;
+    font-size:34px;
 }
 
 .info{
-    max-width: 600px;
-    font-size: 22;
-    text-align: justify !important;
-    font-style: italic;
-    letter-spacing: 1.5px;
-    text-justify: inter-word;
-    color: #e4eefb;
-    font-weight: 900;
+    font-size:15px;
+    letter-spacing:1px;
 }
 
-.hero-content {
-    position: relative;
-    color: white;
-    padding: 120px 60px;
-    max-width: 800px;
 }
 
-.hero-content h1 {
-    font-size: 52px;
-    font-weight: 700;
-    line-height: 1.2;
-}
+/* ===================================================== */
+/* ================= ABOUT SECTION ===================== */
+/* ===================================================== */
 
-/* ---------------- ABOUT ---------------- */
-.about {
-    padding: 80px 60px;
-    text-align: center;
-    background: linear-gradient(
-        
-        rgba(245, 247, 250, 1) 0%,   /* Sky blue center */
-        rgba(223, 237, 255, 1) 50%,  /* Soft fade */
-        rgba(255, 255, 255, 1) 100%  /* Fully white background edges */
-    );
-    padding: 60px 80px;
-    border-radius: 30px;
+@media (max-width:768px){
+
+.about{
+    padding:40px 20px;
 }
 
 #h1{
-    font-size: 50px;
-    font-weight: 800;
-    color: #000000;
-    font-family: 'Inria Sans';
+    font-size:32px;
 }
 
 .subtitle{
-    font-size: 24px;
-    text-align: center;
-    font-weight: 500;
-    letter-spacing: 1px;
-    font-family: 'Inria Serif';
+    font-size:18px;
 }
 
-.about-container {
-    margin-top: 40px;
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    justify-content: center;
+.about-container{
+    flex-direction:column;
+    gap:25px;
+}
+
+.about-img{
+    width:100%;
+    height:auto;
+    border-radius:20px;
 }
 
 .para{
-    font-size: 22;
-    text-align: justify !important;
-    font-family: 'Inria Serif';
-    letter-spacing: 1.5px;
-    text-justify: inter-word;
+    font-size:15px;
+    letter-spacing:1px;
 }
 
-.launch {
- color: #07304F;
- font-size: 32px;
- text-align: center;
- font-weight: 600;
+.launch{
+    font-size:22px;
 }
 
-.about-img {
-    width: 600px;
-    height: 400px;
-    border-radius: 360px;   
 }
 
-@media (max-width: 768px) {
-    .about-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
+/* ===================================================== */
+/* ================= WHY CHOOSE US ===================== */
+/* ===================================================== */
 
-    .about-text {
-        padding: 0 15px;
-        font-size: 14px;
-    }
+@media (max-width:1024px){
+
+.why-grid{
+    grid-template-columns:repeat(2,1fr);
 }
 
-/* ---------------- WHY CHOOSE US ---------------- */
-.why {
-    padding: 60px;
-    text-align: center;
-    margin-top: 0 !important;
-    padding-top: 10px;
+.card{
+    width:100%;
 }
 
-.why-title {
-    font-size: 38px;
-    font-family: 'Inknut Antiqua', serif;
-    color: #0D2A54;
-    font-weight: 900;
-    margin: 0 !important;   
-    padding: 0 !important;
 }
 
-.why-subtitle {
-    font-family: 'Inknut Antiqua', serif;
-    color: #0D2A54;
-    font-size: 14px;
-    font-weight: 800;
-    margin-top: 2px !important;  
-    padding-top: 2px !important;
+@media (max-width:768px){
+
+.why{
+    padding:40px 20px;
 }
 
-
-.why-grid {
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+.why-title{
+    font-size:28px;
 }
 
-.card {
-    width: 400px;
-    font-size: 20px;
-    color: #0D2A54;
-    padding: 30px;
-    border-radius: 15px;
-    background: rgb(248, 17, 17, 3%);
-    transition: 0.3s;
+.why-grid{
+    grid-template-columns:1fr;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+.card{
+    width:100%;
+    font-size:16px;
 }
 
 .icon{
-    width: 100px;
-    height: 100px;
+    width:70px;
+    height:70px;
 }
 
-.cta{
-    color: #5A5A5A;
-    font-size: 15px;
-    letter-spacing: 1px;
 }
 
-/* Tablet */
-@media (max-width: 900px) {
-    .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
+/* ===================================================== */
+/* ================= VMF SECTION ======================= */
+/* ===================================================== */
+
+@media (max-width:768px){
+
+.vmf-section{
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+    padding:50px 20px;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-    .why-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .why-title {
-        font-size: 28px;
-    }
-
-    .why-subtitle {
-        font-size: 12px;
-    }
-
-    .card {
-        padding: 22px;
-    }
+.vmf-box{
+    width:100%;
+    height:auto;
 }
 
-/* ---------------- VISION / MISSION / FOCUS ---------------- */
-.vmf-section {
-    padding: 100px;
-    display: flex;
-    justify-content: space-evenly;
+.heading{
+    font-size:26px;
 }
 
-.heading {
-    color: #0008FF;
-    font-size: 36px;
-    font-weight: 700;
-    text-align: center;
+.para{
+    font-size:15px;
 }
 
-.para {
-    font-size: 20px;
-    text-align: left;
-    font-weight: 400;
+.para-a{
+    font-size:15px;
 }
 
-.para-a {
-    font-size: 19px;
-    text-align: left;
-    font-weight: 400;
 }
 
-.vmf-box {
-    width:350px;
-    height:325px;
-    background: #E5E1DA;
-    padding: 30px;
-    border-radius: 30px;
+/* ===================================================== */
+/* ================= FOOTER RESPONSIVE ================= */
+/* ===================================================== */
+
+@media (max-width:768px){
+
+.main-footer{
+    padding:40px 25px 0 25px;
+    height:auto;
 }
 
-/* ---------------- FOOTER ---------------- */
-
-.main-footer {
-    background: #0075C9;   
-    color: #ffffff;
-    padding: 50px 60px 0 60px;
-    font-family: 'Poppins', sans-serif;
-    height: 420px;
+.footer-content{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:35px;
 }
 
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
-    flex-wrap: wrap;
+.footer-logo{
+    width:180px;
 }
 
-
-.footer-col {
-    max-width: 300px;
-    font-size: 16px;
+.footer-desc{
+    font-size:14px;
 }
 
-
-.footer-logo {
-    width: 300px;
-    margin-bottom: 15px;
+.footer-col{
+    max-width:100%;
 }
 
-
-.footer-desc {
-    line-height: 1.6;
-    font-size: 16px;
+.footer-social img{
+    width:35px;
 }
 
-
-.footer-social img {
-    width: 60px;
-    margin-right: 12px;
-    margin-top: 12px;
-    cursor: pointer;
+.footer-contact{
+    font-size:14px;
 }
 
-
-.footer-col h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    letter-spacing: 1px;
+.footer-bottom{
+    font-size:13px;
 }
 
-
-.footer-col a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    margin-bottom: 8px;
-    font-size: 15px;
 }
 
+/* ===================================================== */
+/* ================= SMALL PHONE FIX =================== */
+/* ===================================================== */
 
-.footer-contact {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-    font-weight: 200;
+@media (max-width:480px){
+
+#main{
+    font-size:34px;
 }
 
-
-.footer-bottom {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 14px;
-    padding: 15px 0;
-    border-top: 1px solid rgba(255,255,255,0.3);
+#helping{
+    font-size:28px;
 }
 
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
+.hero-content{
+    padding:70px 20px;
+}
 
-    .footer-col {
-        max-width: 100%;
-        margin-bottom: 25px;
-    }
+.subtitle{
+    font-size:16px;
+}
 
-    .footer-logo {
-        width: 140px;
-    }
-
-    .footer-social img {
-        width: 30px;
-        margin: 8px;
-    }
 }

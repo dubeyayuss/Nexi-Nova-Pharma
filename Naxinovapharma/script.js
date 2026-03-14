@@ -26,3 +26,11 @@ faders.forEach(item => {
     item.style.transition = "0.8s ease";
     appear.observe(item);
 });
+
+
+const toggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
